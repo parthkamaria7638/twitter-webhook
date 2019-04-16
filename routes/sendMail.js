@@ -5,7 +5,6 @@ var querystring = require('querystring');
 module.exports = function(req, res) {
     var spawn = require("child_process").spawn;
     console.log("Here");
-    console.log("There");
           var process = spawn('python', ["./main.py",
             // newUser.username,
             req.body.email,
