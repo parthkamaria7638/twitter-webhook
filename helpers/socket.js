@@ -2,7 +2,6 @@ const socketIO = require('socket.io')
 const http = require('http')
 const uuid = require('uuid/v4')
 
-
 var socket = { }
 
 // socket.activity_event = 'activity_event_' + uuid()
