@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(passport.initialize());
 app.use(cors({credentials: true, origin: 'https://complaintsapp-cfa95.firebaseapp.com'}));
-app.use(session({
+app.use(session({ 
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true
