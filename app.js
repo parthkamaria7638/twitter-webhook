@@ -8,6 +8,7 @@ const security = require('./helpers/security')
 const auth = require('./helpers/auth')
 const cacheRoute = require('./helpers/cache-route')
 const socket = require('./helpers/socket')
+const cors = require('cors');
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(passport.initialize());
+app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -117,6 +119,10 @@ app.post('/webhook/delete', parseForm, auth.csrf, webhook_view.delete_config)
  * Activity view
  **/
 app.get('/activity', auth.basic, require('./routes/activity'))
+app.post('/direct_messages', require('./routes/direct_messages'))
+app.post('/reply_tweet', require('./routes/reply_tweet'))
+app.post('/send_fb_msg', require('./routes/send_fb_msg'))
+app.post('/sendMail', require('./routes/sendMail'))
 
 
 /**
