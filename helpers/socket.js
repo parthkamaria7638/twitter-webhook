@@ -5,9 +5,8 @@ const uuid = require('uuid/v4')
 
 var socket = { }
 
-socket.activity_event = 'activity_event_' + uuid()
-
-
+// socket.activity_event = 'activity_event_' + uuid()
+socket.activity_event = 'activity_event';
 /**
  * Initilaizes socket.io
  */

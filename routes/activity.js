@@ -8,7 +8,10 @@ var activity = function (req, resp) {
     socket_host: req.headers.host.indexOf('localhost') == 0 ? 'http://' + req.headers.host : 'https://' + req.headers.host,
     activity_event: socket.activity_event
   }
-  resp.render('activity', json_response)
+  console.log("---JSON RESPOSE---");
+  console.log(json_response);
+  socket.io.emit("activity_url", json_response);
+  resp.render('activity', json_response);
 }
 
 

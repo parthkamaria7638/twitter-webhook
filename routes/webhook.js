@@ -27,10 +27,10 @@ webhook.get_config = function (req, resp) {
 
     if (json_response.configs.length) {
       json_response.update_webhook_url = json_response.configs[0].url
-    }
-
-    console.log(json_response)
-    resp.render('webhook', json_response)
+    } 
+    console.log("-------");
+    console.log(json_response);
+    resp.render('webhook', json_response);
   })
 
   // failure

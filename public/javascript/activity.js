@@ -8,6 +8,10 @@
    */
   activity.connect = function (socket_host, activity_event) {
     io.connect(socket_host).on(activity_event, function (data) {
+      // console.log("----------");
+      // console.log(data);
+      // console.log("----------");
+      // io.connect(socket_host).emit('data', data);
       // get template
       var tmpl_source = document.getElementById('json_template').innerHTML;
       var template = Handlebars.compile(tmpl_source);
